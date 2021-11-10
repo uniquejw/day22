@@ -15,9 +15,9 @@ const ran = parseInt(Math.random() * 10) // 랜덤 숫자 생성
     }
 }
 console.log(arr1)
-console.log(`총 ${count}회 진행 후 마무리되었습니다.`)
+//console.log(`총 ${count}회 진행 후 마무리되었습니다.`)
 
-let input = require('readline-sync') // 문자열 입력 import 기능
+let input = require('readline-sync') // 문자열 입력 import 와 비슷
 let count2 = 0
 Loop1 :
     while(true){
@@ -45,10 +45,10 @@ Loop1 :
                 }
                 console.log(arr2)
             }
-            if (arr2.length === 4) {
+            if (arr2.length === 4) { // 배열이 총 4자리가 되면 arr1과 arr2 비교한다.
                 for (let j = 0; j < 4; j++) {
                     for (let k = 0; k < 4; k++) {
-                        if (arr1[j] == arr2[k]) {
+                        if (arr1[j] == arr2[k]) { // arr1과 arr2 중 같은 값일 때 자리수도 같다면 스트라이크 다르다면 볼이다.
                             if (j === k) {
                                 strike++
                             } else {
