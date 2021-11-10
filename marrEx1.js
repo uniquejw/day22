@@ -9,6 +9,7 @@ const parr = []
 // 가장 매출이 좋았던 분기
 
 // 각 분기별로 매출 평균을 만든다
+
 for (let i = 0; i < arr.length; i++){
     const tempArr = arr[i]
     console.log(tempArr)
@@ -22,6 +23,8 @@ for (let i = 0; i < arr.length; i++){
     const tempAvg = Number((sum/tempArr.length).toFixed(2))
     console.log(`tempAvg = ${tempAvg}`)
     parr.push(tempAvg)
+
+
 }
 console.log(parr)
 // 그 중에서 최대 평균을 찾는다
@@ -30,6 +33,13 @@ console.log(parr)
 
 let max = 0
 let period = 0
+// for (let i = 0; i < parr.length; i++){
+//
+//     if(parr[i] > max) {
+//         max = parr[i]
+//         period = i + 1
+//     }
+// }
 for (let i = 0; i < parr.length; i++){
 
     if(parr[i] > max) {
@@ -38,6 +48,16 @@ for (let i = 0; i < parr.length; i++){
     }
 }
 
+let best = 0
+for(i=0; i<arr.length;i++){
+    for(j=0; j<arr[i].length; j++){
+        if(arr[i][j] > max){
+            max = arr[i][j]
+            best = (i*arr[i].length) + (j+1)
+        }
+    }
+}
 console.log("max:" + max)
 console.log("max period: " + period + "분기 입니다")
+console.log(`최고 매출 월은 ${best}월 입니다.`)
 
