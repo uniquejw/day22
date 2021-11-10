@@ -6,7 +6,6 @@ const arr = [
 ]
 
 const parr = []
-
 // 가장 매출이 좋았던 분기
 
 // 각 분기별로 매출 평균을 만든다
@@ -25,7 +24,7 @@ for (let i = 0; i < arr.length; i++){
     parr.push(tempAvg)
 }
 console.log(parr)
-// 그 중에서 최대 평균을 찾는다 => 분기를 찾는다.
+// 그 중에서 최대 평균을 찾는다
 //let max = Math.max.apply(0, parr)
 //console.log(max)
 
@@ -41,5 +40,4 @@ for (let i = 0; i < parr.length; i++){
 
 console.log("max:" + max)
 console.log("max period: " + period + "분기 입니다")
-
 
