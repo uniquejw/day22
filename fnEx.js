@@ -36,6 +36,8 @@ console.log(calc (10, 20, (x,y) => x * y))
 //
 // 이름 결정하고, 파라미터 정하고, 리턴타입 결정하고 코딩 진행
 
+
+
 function startAt(x){
     function incrementBy(y){
         return x + y
@@ -49,4 +51,29 @@ let closure2 = startAt(2)
 console.log(closure1(1))
 console.log(closure1(2))
 console.log(closure1(10))
+
+console.log("-------------------")
+function closer(a){
+    let sum = 0
+    return function inner() {
+        for (i = 0; i < a; i++) {
+            sum += i
+        }
+        console.log(sum)
+    }
+}
+let p =  closer(100)
+p()
+
+console.log("-------------------")
+function outer(){
+    const name = 'kyle';
+    console.log(name)
+    return function inner(){
+        const greeting = 'hello!'
+        console.log(greeting,name)
+    }
+}
+const getKyle = outer() //kyle
+getKyle() //hello!kyle
 
